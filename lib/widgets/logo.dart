@@ -12,6 +12,7 @@ class Logo extends StatelessWidget {
     final color = Theme.of(context).textTheme.bodySmall!.color!;
 
     return Row(
+      mainAxisSize: MainAxisSize.min,
       children: [
         SvgPicture.asset(
           'assets/icons/parrot.svg',
@@ -22,7 +23,7 @@ class Logo extends StatelessWidget {
             BlendMode.srcIn,
           ),
         ),
-        SizedBox(width: 6.0),
+        SizedBox(width: size / 3),
         Text(
           'PARROTT KIM',
           style: TextStyle(

@@ -3,6 +3,7 @@ import 'package:portfolio_website/animations/fade_animation.dart';
 import 'package:portfolio_website/screens/main/controller/main_controller.dart';
 import 'package:portfolio_website/services/responsive.dart';
 import 'package:portfolio_website/widgets/logo.dart';
+import 'package:portfolio_website/widgets/subtitle.dart';
 import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
@@ -16,20 +17,35 @@ class NavigationAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    final provider = context.watch<MainController>();
+
     return AppBar(
-      flexibleSpace: Opacity(
-        opacity: Responsive.isDesktop(context) ? 1 : 0,
-        child: Padding(
-          padding: const EdgeInsets.only(left: 170.0, right: 140.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              MainLogo(),
-              Spacer(),
-              AppBarListItem(controller: controller),
-            ],
+      flexibleSpace: Stack(
+        children: [
+          Positioned.fill(
+            child: AnimatedOpacity(
+              opacity: provider.currentIndex == 0 ? 0 : 1,
+              duration: Duration(milliseconds: 400),
+              child: ColoredBox(
+                color: Theme.of(context).scaffoldBackgroundColor,
+              ),
+            ),
           ),
-        ),
+          if (Responsive.isDesktop(context))
+            Padding(
+              padding: const EdgeInsets.only(left: 170.0, right: 140.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  MainLogo(),
+                  Spacer(),
+                  AppBarListItem(controller: controller),
+                ],
+              ),
+            )
+          else
+            Subtitle(),
+        ],
       ),
     );
   }
@@ -65,14 +81,14 @@ class AppBarListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final main = context.watch<MainController>();
+    final provider = context.watch<MainController>();
 
     return ListView.builder(
       shrinkWrap: true,
       scrollDirection: Axis.horizontal,
       physics: NeverScrollableScrollPhysics(),
       padding: EdgeInsets.zero,
-      itemCount: main.screens.length,
+      itemCount: provider.screens.length,
       itemBuilder: (context, index) => AppBarButton(
         index: index,
         controller: controller,
@@ -112,8 +128,7 @@ class _AppBarButtonState extends State<AppBarButton>
     _controller = AnimationController(vsync: this, duration: duration);
     _linearAnimation = Tween(begin: 0.0, end: 1.1)
         .animate(CurvedAnimation(parent: _controller, curve: curve));
-    WidgetsBinding.instance.addPostFrameCallback((_) =>
-        _controller.addStatusListener((status) => animationListener(status)));
+    _controller.addStatusListener((status) => animationListener(status));
   }
 
   animationListener(AnimationStatus status) {
@@ -125,7 +140,6 @@ class _AppBarButtonState extends State<AppBarButton>
         _controller.reverse();
       }
       if (context.watch<MainController>().currentIndex != widget.index) {
-        print('diffrence');
         _controller.reverse();
       }
     }
@@ -146,16 +160,15 @@ class _AppBarButtonState extends State<AppBarButton>
   @override
   Widget build(BuildContext context) {
     final bodyColor = Theme.of(context).textTheme.bodySmall!.color!;
-    final main = context.watch<MainController>();
+    final provider = context.watch<MainController>();
 
     return FadeAnimation(
       duration: Duration(milliseconds: 250),
       offset: Offset(0, -10),
       delay: Duration(milliseconds: 1000 + (widget.index * 250)),
       child: InkWell(
-        onTap: () {
-          main.navigatePage(widget.controller, widget.index);
-        },
+        onTap: () async =>
+            await provider.navigatePage(widget.controller, widget.index),
         onHover: (value) {
           if (value) {
             _controller.forward();
@@ -175,7 +188,7 @@ class _AppBarButtonState extends State<AppBarButton>
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 14.0),
               child: Text(
-                main.screens[widget.index]['title'],
+                provider.screens[widget.index]['title'],
                 style: Theme.of(context).textTheme.bodySmall!,
               ),
             ),
@@ -191,9 +204,9 @@ class _AppBarButtonState extends State<AppBarButton>
                     child: child,
                   ),
                   child: Container(
-                    width:
-                        calculateTextSize(main.screens[widget.index]['title'])
-                            .width,
+                    width: calculateTextSize(
+                            provider.screens[widget.index]['title'])
+                        .width,
                     height: 1.0,
                     color: bodyColor,
                   ),

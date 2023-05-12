@@ -1,8 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio_website/screens/about/about_screen.dart';
+import 'package:portfolio_website/screens/contact/contact_screen.dart';
 import 'package:portfolio_website/screens/home/home_screen.dart';
-import 'package:portfolio_website/screens/temp/temp_screen.dart';
+import 'package:portfolio_website/screens/portfolio/portfolio_screen.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
 class MainController extends ChangeNotifier {
@@ -10,18 +11,22 @@ class MainController extends ChangeNotifier {
     {
       'title': 'appbar1'.tr(),
       'route': HomeScreen(),
+      'isLoaded': true,
     },
     {
       'title': 'appbar2'.tr(),
       'route': AboutScreen(),
+      'isLoaded': false,
     },
     {
       'title': 'appbar3'.tr(),
-      'route': TempScreen(),
+      'route': PortfolioScreen(),
+      'isLoaded': false,
     },
     {
       'title': 'appbar4'.tr(),
-      'route': TempScreen(),
+      'route': ContactScreen(),
+      'isLoaded': false,
     },
   ];
   List<Map> get screens => _screens;
@@ -34,6 +39,8 @@ class MainController extends ChangeNotifier {
 
   changePageIndex(int index) {
     _currentIndex = index;
+    _screens[index]['isLoaded'] = true;
+    print(_screens[index]['isLoaded']);
     notifyListeners();
   }
 
@@ -42,7 +49,7 @@ class MainController extends ChangeNotifier {
       _isScrolling = true;
       _currentIndex = index;
       await controller.scrollToIndex(index,
-          preferPosition: AutoScrollPosition.begin);
+          preferPosition: AutoScrollPosition.middle);
       _isScrolling = false;
     }
     notifyListeners();

@@ -21,9 +21,7 @@ class HomeBackground extends StatelessWidget {
           delay: Duration(milliseconds: 2000),
           child: ClipRRect(
             child: SizedBox(
-              height: Responsive.isDesktop(context)
-                  ? size.height - 120.0
-                  : size.height - 60.0,
+              height: size.height,
               width: size.width,
               child: FittedBox(
                 fit: BoxFit.cover,
@@ -48,11 +46,13 @@ class HomeBackground extends StatelessWidget {
                 colors: [
                   Colors.transparent,
                   Theme.of(context).scaffoldBackgroundColor.withOpacity(0.3),
+                  Theme.of(context).scaffoldBackgroundColor.withOpacity(0.7),
                   Theme.of(context).scaffoldBackgroundColor,
                 ],
                 stops: [
                   0.0,
-                  0.7,
+                  0.6,
+                  0.8,
                   1.0,
                 ],
               ),

@@ -11,7 +11,8 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenState extends State<HomeScreen>
+    with AutomaticKeepAliveClientMixin {
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -22,14 +23,19 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
+
     final size = MediaQuery.of(context).size;
-    final controller = context.watch<HomeController>();
+    final provider = context.watch<HomeController>();
 
     return Stack(
       children: [
-        HomeBackground(size: size, controller: controller.controller),
+        HomeBackground(size: size, controller: provider.controller),
         HomeIntroduction(),
       ],
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

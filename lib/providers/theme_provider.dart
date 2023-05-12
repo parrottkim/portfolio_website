@@ -79,7 +79,7 @@ ThemeData darkTheme = ThemeData(
   brightness: Brightness.dark,
   scaffoldBackgroundColor: Color(0xFF181818),
   primaryColor: Color(0xFF79A1D8),
-  cardColor: Colors.grey[800],
+  cardColor: Color(0xFFE5E7E8),
   shadowColor: Colors.black.withOpacity(0.75),
   splashColor: Colors.transparent,
   dividerColor: Colors.grey[400],
@@ -91,7 +91,7 @@ ThemeData darkTheme = ThemeData(
     primary: Color(0xFF1B4E96),
     secondary: Color(0xFF245FB2),
     tertiary: Color(0xFF517FBF),
-    outline: Color(0xFFE7EBF2),
+    outline: Color(0xFF8B8B8A),
   ),
   textTheme: TextTheme(
     headlineLarge: TextStyle(
@@ -145,8 +145,12 @@ ThemeData darkTheme = ThemeData(
     ),
   ),
   buttonTheme: ButtonThemeData(
-    buttonColor: Colors.teal,
+    buttonColor: Color(0xFF79A1D8),
     textTheme: ButtonTextTheme.primary,
+  ),
+  floatingActionButtonTheme: FloatingActionButtonThemeData(
+    backgroundColor: Color(0xFF2C2C2C),
+    foregroundColor: Colors.white,
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ButtonStyle(

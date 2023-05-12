@@ -19,16 +19,14 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   final List _images = [
-    // AssetImage('assets/images/profile_image.png'),
-    // AssetImage('assets/images/background1.jpg'),
-    // AssetImage('assets/images/background2.jpg'),
-    // AssetImage('assets/projects/ignite.png'),
-    // AssetImage('assets/projects/portfolio.png'),
-    // AssetImage('assets/projects/flutter_responsive_dashboard.png'),
-    // AssetImage('assets/projects/bluetooth_example.png'),
+    AssetImage('assets/images/iphone.png'),
+    AssetImage('assets/images/portfolio1.png'),
+    AssetImage('assets/images/portfolio2.png'),
+    AssetImage('assets/images/portfolio3.png'),
+    AssetImage('assets/images/profile.png'),
   ];
 
-  Future<void> _loadImage(ImageProvider provider) {
+  Future<void> _loadImage(ImageProvider provider) async {
     final config = ImageConfiguration(
       bundle: rootBundle,
       devicePixelRatio: 1,
@@ -36,16 +34,13 @@ class _SplashScreenState extends State<SplashScreen> {
     );
     final Completer<void> completer = Completer();
     final ImageStream stream = provider.resolve(config);
-    final controller = Provider.of<HomeController>(context, listen: false);
 
     late final ImageStreamListener listener;
 
     listener = ImageStreamListener((ImageInfo image, bool sync) {
-      if (controller.isLoaded) {
-        debugPrint("Image ${image.debugLabel} finished loading");
-        completer.complete();
-        stream.removeListener(listener);
-      }
+      debugPrint("Image ${image.debugLabel} finished loading");
+      completer.complete();
+      stream.removeListener(listener);
     }, onError: (dynamic exception, StackTrace? stackTrace) {
       completer.complete();
       stream.removeListener(listener);
@@ -83,11 +78,11 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   void initState() {
+    super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       Provider.of<HomeController>(context, listen: false).loadVideo();
     });
     _preloading();
-    super.initState();
   }
 
   @override

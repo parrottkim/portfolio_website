@@ -15,15 +15,6 @@ class HomeController extends ChangeNotifier {
         _controller.setLooping(false);
         _isLoaded = true;
       });
-    // _controller.addListener(() {
-    //   if (_controller.value.position == _controller.value.duration) {
-    //     print('ended');
-    //   }
-    // });
     notifyListeners();
-  }
-
-  playVideo() async {
-    await _controller.play();
   }
 }
