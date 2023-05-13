@@ -37,13 +37,23 @@ class ContactIntroduction extends StatelessWidget {
               color: Theme.of(context).scaffoldBackgroundColor,
             ),
           ),
+          SizedBox(height: 16.0),
+          MaterialButton(
+            onPressed: () => html.window.open(
+                'https://career.programmers.co.kr/pr/parrottkim21_1393',
+                '_blank'),
+            color: Theme.of(context).scaffoldBackgroundColor,
+            child: Text(
+              'contact3'.tr(),
+            ),
+          ),
           SizedBox(height: 200.0),
           if (Responsive.isDesktop(context))
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-                  'contact3'.tr(),
+                  'contact4'.tr(),
                   style: TextStyle(
                     fontSize: 14.0,
                     color: Theme.of(context).scaffoldBackgroundColor,
@@ -117,7 +127,7 @@ class ContactIntroduction extends StatelessWidget {
                 ),
                 SizedBox(height: 16.0),
                 Text(
-                  'contact3'.tr(),
+                  'contact4'.tr(),
                   style: TextStyle(
                     fontSize: 14.0,
                     color: Theme.of(context).scaffoldBackgroundColor,
