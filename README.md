@@ -2,7 +2,7 @@
 <img src="https://img.shields.io/badge/Dart-0175C2?style=flat-square&logo=Dart&logoColor=white"/>  <img src="https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=Flutter&logoColor=white"/>
 
 ## My responsive single-page portfolio built with Flutter Web.
-![무제-min](https://github.com/ParrottKim/portfolio_website/assets/83802425/2074c5e4-fd4d-4844-8a6b-bdefede2bbc4)
+![ezgif com-gif-maker](https://github.com/ParrottKim/portfolio_website/assets/83802425/55c1a30f-b64a-45f4-b5dd-e75c1e1d169e)
 ---
 #### View the [live site](https://parrottkim.github.io). (Under Development)
 
