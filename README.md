@@ -4,7 +4,7 @@
 ## My responsive single-page portfolio built with Flutter Web.
 ![ezgif com-gif-maker](https://github.com/ParrottKim/portfolio_website/assets/83802425/55c1a30f-b64a-45f4-b5dd-e75c1e1d169e)
 ---
-#### View the [live site](https://parrottkim.github.io). (Under Development)
+#### View the [live site](https://parrottkim.github.io).
 
 ## :fire: Features
 :bulb: Fully built with Flutter Web only  
