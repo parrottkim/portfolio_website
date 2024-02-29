@@ -40,7 +40,7 @@ class ContactIntroduction extends StatelessWidget {
           SizedBox(height: 16.0),
           MaterialButton(
             onPressed: () => html.window.open(
-                'https://drive.google.com/file/d/1mYF41nwKxY1g3eyJUg9MN2sN3459-81D/view?usp=sharing',
+                'https://parrottkim.notion.site/df8f57f172b64924adafe48c9d228514',
                 '_blank'),
             color: Theme.of(context).scaffoldBackgroundColor,
             child: Text(
