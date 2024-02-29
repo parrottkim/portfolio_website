@@ -40,7 +40,13 @@ class DesktopComponent extends StatelessWidget {
                   FadeAnimation(
                     delay: Duration(milliseconds: 500),
                     offset: Offset(-10.0, 0.0),
-                    child: Text('about1'.tr()),
+                    child: Text(
+                      'about1'.tr(),
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyLarge
+                          ?.copyWith(fontWeight: FontWeight.w400),
+                    ),
                   ),
                   SizedBox(height: 60.0),
                   FadeAnimation(
@@ -76,7 +82,7 @@ class DesktopComponent extends StatelessWidget {
                           child: Text(
                             provider.education[index]['date'],
                             style: TextStyle(
-                              fontFamily: 'BebasNeue',
+                              fontFamily: 'Config',
                               fontSize: 14.0,
                               color: Theme.of(context).primaryColor,
                               letterSpacing: 4.0,
@@ -107,8 +113,7 @@ class DesktopComponent extends StatelessWidget {
                         ),
                       ],
                     ),
-                    separatorBuilder: (context, index) =>
-                        SizedBox(height: 30.0),
+                    separatorBuilder: (context, index) => SizedBox(height: 30.0),
                   ),
                   SizedBox(height: 60.0),
                   FadeAnimation(
@@ -144,7 +149,7 @@ class DesktopComponent extends StatelessWidget {
                           child: Text(
                             provider.career[index]['date'],
                             style: TextStyle(
-                              fontFamily: 'BebasNeue',
+                              fontFamily: 'Config',
                               fontSize: 14.0,
                               color: Theme.of(context).primaryColor,
                               letterSpacing: 4.0,
@@ -175,8 +180,7 @@ class DesktopComponent extends StatelessWidget {
                         ),
                       ],
                     ),
-                    separatorBuilder: (context, index) =>
-                        SizedBox(height: 30.0),
+                    separatorBuilder: (context, index) => SizedBox(height: 30.0),
                   ),
                 ],
               ),
@@ -255,8 +259,8 @@ class DesktopComponent extends StatelessWidget {
                         delay: Duration(milliseconds: 1500 + (100 * index)),
                         offset: Offset(0.0, 0.0),
                         child: InkWell(
-                          onTap: () => html.window
-                              .open(provider.social[index]['link'], '_blank'),
+                          onTap: () =>
+                              html.window.open(provider.social[index]['link'], '_blank'),
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
@@ -268,11 +272,11 @@ class DesktopComponent extends StatelessWidget {
                                   fit: BoxFit.cover,
                                   colorFilter: ColorFilter.mode(
                                     Colors.white,
-                                    BlendMode.srcIn,
+                                    BlendMode.srcATop,
                                   ),
                                 ),
                               ),
-                              SizedBox(width: 6.0),
+                              SizedBox(width: 8.0),
                               Text(
                                 provider.social[index]['name'],
                                 style: Theme.of(context)
@@ -309,8 +313,7 @@ class MobileComponent extends StatelessWidget {
 
     return Padding(
       padding: EdgeInsets.symmetric(
-          horizontal: Responsive.isTablet(context) ? 100.0 : 16.0,
-          vertical: 60.0),
+          horizontal: Responsive.isTablet(context) ? 100.0 : 16.0, vertical: 60.0),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -354,10 +357,9 @@ class MobileComponent extends StatelessWidget {
                   child: Text(
                     provider.education[index]['date'],
                     style: TextStyle(
-                      fontFamily: 'BebasNeue',
+                      fontFamily: 'Config',
                       fontSize: 14.0,
                       color: Theme.of(context).primaryColor,
-                      letterSpacing: 4.0,
                     ),
                   ),
                 ),
@@ -421,10 +423,9 @@ class MobileComponent extends StatelessWidget {
                   child: Text(
                     provider.career[index]['date'],
                     style: TextStyle(
-                      fontFamily: 'BebasNeue',
+                      fontFamily: 'Config',
                       fontSize: 14.0,
                       color: Theme.of(context).primaryColor,
-                      letterSpacing: 4.0,
                     ),
                   ),
                 ),
@@ -523,8 +524,7 @@ class MobileComponent extends StatelessWidget {
                 delay: Duration(milliseconds: 1500 + (100 * index)),
                 offset: Offset(0.0, 0.0),
                 child: InkWell(
-                  onTap: () => html.window
-                      .open(provider.social[index]['link'], '_blank'),
+                  onTap: () => html.window.open(provider.social[index]['link'], '_blank'),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -536,7 +536,7 @@ class MobileComponent extends StatelessWidget {
                           fit: BoxFit.cover,
                           colorFilter: ColorFilter.mode(
                             Colors.white,
-                            BlendMode.srcIn,
+                            BlendMode.srcATop,
                           ),
                         ),
                       ),

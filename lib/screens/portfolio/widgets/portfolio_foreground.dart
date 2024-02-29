@@ -59,6 +59,7 @@ class DesktopComponent extends StatelessWidget {
                         provider.portfolio[index]['title'],
                         style: Theme.of(context).textTheme.titleLarge?.copyWith(
                               fontFamily: 'Pretendard',
+                              fontWeight: FontWeight.w500,
                             ),
                       ),
                       SizedBox(height: 4.0),
@@ -88,7 +89,7 @@ class DesktopComponent extends StatelessWidget {
                       Text(
                         provider.portfolio[index]['date'],
                         style: TextStyle(
-                          fontFamily: 'BebasNeue',
+                          fontFamily: 'Config',
                           fontSize: 14.0,
                           color: Theme.of(context).primaryColor,
                           letterSpacing: 4.0,
@@ -101,25 +102,23 @@ class DesktopComponent extends StatelessWidget {
                       Wrap(
                         direction: Axis.horizontal,
                         alignment: WrapAlignment.start,
-                        spacing: 4,
+                        spacing: 8,
                         runSpacing: 4,
                         children: List.generate(
                           provider.portfolio[index]['link'].length,
                           (wrapIndex) => InkWell(
                             onTap: () => html.window.open(
-                                provider.portfolio[index]['link'][wrapIndex]
-                                    ['link'],
+                                provider.portfolio[index]['link'][wrapIndex]['link'],
                                 '_blank'),
                             child: SizedBox(
                               height: 20.0,
                               width: 20.0,
                               child: SvgPicture.asset(
-                                provider.portfolio[index]['link'][wrapIndex]
-                                    ['asset'],
+                                provider.portfolio[index]['link'][wrapIndex]['asset'],
                                 fit: BoxFit.cover,
                                 colorFilter: ColorFilter.mode(
                                   Colors.white,
-                                  BlendMode.srcIn,
+                                  BlendMode.srcATop,
                                 ),
                               ),
                             ),
@@ -142,9 +141,7 @@ class DesktopComponent extends StatelessWidget {
                       end: Alignment.centerLeft,
                       colors: [
                         Colors.transparent,
-                        Theme.of(context)
-                            .scaffoldBackgroundColor
-                            .withOpacity(0.3),
+                        Theme.of(context).scaffoldBackgroundColor.withOpacity(0.3),
                         Theme.of(context).scaffoldBackgroundColor,
                       ],
                       stops: [
@@ -168,9 +165,7 @@ class DesktopComponent extends StatelessWidget {
                       end: Alignment.centerRight,
                       colors: [
                         Colors.transparent,
-                        Theme.of(context)
-                            .scaffoldBackgroundColor
-                            .withOpacity(0.3),
+                        Theme.of(context).scaffoldBackgroundColor.withOpacity(0.3),
                         Theme.of(context).scaffoldBackgroundColor,
                       ],
                       stops: [
@@ -227,8 +222,7 @@ class MobileComponent extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20.0),
                       color: Theme.of(context).primaryColor),
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 8.0, vertical: 4.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
                     child: Text(
                       provider.portfolio[index]['stack'][wrapIndex],
                       style: TextStyle(fontSize: 12.0),
@@ -241,10 +235,9 @@ class MobileComponent extends StatelessWidget {
             Text(
               provider.portfolio[index]['date'],
               style: TextStyle(
-                fontFamily: 'BebasNeue',
+                fontFamily: 'Config',
                 fontSize: 14.0,
                 color: Theme.of(context).primaryColor,
-                letterSpacing: 4.0,
               ),
             ),
             Text(
@@ -254,14 +247,13 @@ class MobileComponent extends StatelessWidget {
             Wrap(
               direction: Axis.horizontal,
               alignment: WrapAlignment.start,
-              spacing: 4,
+              spacing: 8,
               runSpacing: 4,
               children: List.generate(
                 provider.portfolio[index]['link'].length,
                 (wrapIndex) => InkWell(
                   onTap: () => html.window.open(
-                      provider.portfolio[index]['link'][wrapIndex]['link'],
-                      '_blank'),
+                      provider.portfolio[index]['link'][wrapIndex]['link'], '_blank'),
                   child: SizedBox(
                     height: 20.0,
                     width: 20.0,
@@ -270,7 +262,7 @@ class MobileComponent extends StatelessWidget {
                       fit: BoxFit.cover,
                       colorFilter: ColorFilter.mode(
                         Colors.white,
-                        BlendMode.srcIn,
+                        BlendMode.srcATop,
                       ),
                     ),
                   ),

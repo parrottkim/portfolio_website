@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:morphable_shape/morphable_shape.dart';
 
 class Logo extends StatelessWidget {
   const Logo({Key? key, this.size = 18.0}) : super(key: key);
@@ -20,16 +19,20 @@ class Logo extends StatelessWidget {
           width: size,
           colorFilter: ColorFilter.mode(
             color,
-            BlendMode.srcIn,
+            BlendMode.srcATop,
           ),
         ),
         SizedBox(width: size / 3),
-        Text(
-          'PARROTT KIM',
-          style: TextStyle(
-            fontFamily: 'BebasNeue',
-            fontSize: size,
-            color: color,
+        Padding(
+          padding: const EdgeInsets.only(top: 4.0),
+          child: Text(
+            'PARROTT KIM',
+            style: TextStyle(
+              fontFamily: 'Schabo',
+              fontSize: size,
+              color: color,
+              height: 0.0,
+            ),
           ),
         ),
       ],

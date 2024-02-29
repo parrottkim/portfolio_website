@@ -1,14 +1,12 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio_website/providers/theme_provider.dart';
 import 'package:portfolio_website/screens/about/controller/about_controller.dart';
 import 'package:portfolio_website/screens/contact/controller/contact_controller.dart';
-import 'package:portfolio_website/screens/main/controller/main_controller.dart';
-import 'package:portfolio_website/providers/theme_provider.dart';
 import 'package:portfolio_website/screens/home/controller/home_controller.dart';
-import 'package:portfolio_website/screens/main/main_screen.dart';
+import 'package:portfolio_website/screens/main/controller/main_controller.dart';
 import 'package:portfolio_website/screens/portfolio/controller/portfolio_controller.dart';
 import 'package:portfolio_website/screens/splash_screen.dart';
-import 'package:portfolio_website/services/router.dart';
 import 'package:portfolio_website/services/scroll_behavior.dart';
 import 'package:provider/provider.dart';
 
@@ -38,16 +36,9 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => PortfolioController()),
         ChangeNotifierProvider(create: (context) => ContactController()),
       ],
-      // child: MaterialApp.router(
-      //   debugShowCheckedModeBanner: false,
-      //   routerConfig: router,
-      //   title: 'Parrott Kim',
-      //   theme: darkTheme,
-      //   scrollBehavior: CustomScrollBehavior(),
-      // ),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Parrott Kim',
+        title: 'PARROTT KIM',
         theme: darkTheme,
         scrollBehavior: CustomScrollBehavior(),
         localizationsDelegates: context.localizationDelegates,

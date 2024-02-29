@@ -4,7 +4,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:go_router/go_router.dart';
 import 'package:portfolio_website/animations/polygon_indicator_animation.dart';
 import 'package:portfolio_website/screens/home/controller/home_controller.dart';
 import 'package:portfolio_website/screens/main/main_screen.dart';
@@ -70,8 +69,7 @@ class _SplashScreenState extends State<SplashScreen> {
       PageRouteBuilder(
         pageBuilder: (_, __, ___) => MainScreen(),
         transitionDuration: Duration(milliseconds: 200),
-        transitionsBuilder: (_, a, __, c) =>
-            FadeTransition(opacity: a, child: c),
+        transitionsBuilder: (_, a, __, c) => FadeTransition(opacity: a, child: c),
       ),
     );
   }
@@ -97,7 +95,7 @@ class _SplashScreenState extends State<SplashScreen> {
             'assets/icons/parrot.svg',
             colorFilter: ColorFilter.mode(
               Colors.white,
-              BlendMode.srcIn,
+              BlendMode.srcATop,
             ),
           ),
         ),

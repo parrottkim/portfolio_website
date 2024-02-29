@@ -40,7 +40,7 @@ class ContactIntroduction extends StatelessWidget {
           SizedBox(height: 16.0),
           MaterialButton(
             onPressed: () => html.window.open(
-                'https://drive.google.com/file/d/1_xwfzxlWoqlX05lv7w6IEdFl1ySDC1sL/view?usp=sharing',
+                'https://drive.google.com/file/d/1mYF41nwKxY1g3eyJUg9MN2sN3459-81D/view?usp=sharing',
                 '_blank'),
             color: Theme.of(context).scaffoldBackgroundColor,
             child: Text(
@@ -78,8 +78,8 @@ class ContactIntroduction extends StatelessWidget {
                   children: List.generate(
                     provider.social.length,
                     (index) => InkWell(
-                      onTap: () => html.window
-                          .open(provider.social[index]['link'], '_blank'),
+                      onTap: () =>
+                          html.window.open(provider.social[index]['link'], '_blank'),
                       child: SizedBox(
                         height: 20.0,
                         width: 20.0,
@@ -88,7 +88,7 @@ class ContactIntroduction extends StatelessWidget {
                           fit: BoxFit.cover,
                           colorFilter: ColorFilter.mode(
                             Theme.of(context).scaffoldBackgroundColor,
-                            BlendMode.srcIn,
+                            BlendMode.srcATop,
                           ),
                         ),
                       ),
@@ -108,8 +108,8 @@ class ContactIntroduction extends StatelessWidget {
                   children: List.generate(
                     provider.social.length,
                     (index) => InkWell(
-                      onTap: () => html.window
-                          .open(provider.social[index]['link'], '_blank'),
+                      onTap: () =>
+                          html.window.open(provider.social[index]['link'], '_blank'),
                       child: SizedBox(
                         height: 20.0,
                         width: 20.0,
@@ -118,7 +118,7 @@ class ContactIntroduction extends StatelessWidget {
                           fit: BoxFit.cover,
                           colorFilter: ColorFilter.mode(
                             Theme.of(context).scaffoldBackgroundColor,
-                            BlendMode.srcIn,
+                            BlendMode.srcATop,
                           ),
                         ),
                       ),

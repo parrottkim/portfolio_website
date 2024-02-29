@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_website/screens/main/controller/main_controller.dart';
-import 'package:portfolio_website/services/responsive.dart';
 import 'package:provider/provider.dart';
 
 class Subtitle extends StatelessWidget {
@@ -19,16 +18,18 @@ class Subtitle extends StatelessWidget {
           Text(
             (provider.currentIndex + 1).toString().padLeft(2, '0'),
             style: TextStyle(
-              fontFamily: 'BebasNeue',
+              fontFamily: 'Config',
               fontSize: 12.0,
+              letterSpacing: 2.0,
             ),
           ),
           SizedBox(width: 4.0),
           Text(
-            provider.screens[provider.currentIndex]['title'],
+            provider.screens[provider.currentIndex]['title'].toUpperCase(),
             style: TextStyle(
-              fontFamily: 'BebasNeue',
+              fontFamily: 'Config',
               fontSize: 12.0,
+              letterSpacing: 2.0,
             ),
           ),
           SizedBox(width: 10.0),

@@ -54,7 +54,7 @@ class DesktopComponent extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.all(12.0),
                         child: ClipRRect(
-                          borderRadius: BorderRadius.circular(20.0),
+                          borderRadius: BorderRadius.circular(40.0),
                           child: PageView.builder(
                             controller: provider.backgroundController,
                             physics: NeverScrollableScrollPhysics(),
@@ -70,8 +70,7 @@ class DesktopComponent extends StatelessWidget {
                                 width: 64.0,
                               ),
                             ),
-                            onPageChanged: (value) =>
-                                provider.changeIndex(value),
+                            onPageChanged: (value) => provider.changeIndex(value),
                           ),
                         ),
                       ),
@@ -87,8 +86,7 @@ class DesktopComponent extends StatelessWidget {
                   children: [
                     InkWell(
                       onTap: provider.currentIndex > 0
-                          ? () =>
-                              provider.navigatePage(provider.currentIndex - 1)
+                          ? () => provider.navigatePage(provider.currentIndex - 1)
                           : null,
                       child: Padding(
                         padding: EdgeInsets.all(8.0),
@@ -102,17 +100,14 @@ class DesktopComponent extends StatelessWidget {
                     ),
                     SizedBox(width: 8.0),
                     InkWell(
-                      onTap: provider.currentIndex <
-                              provider.portfolio.length - 1
-                          ? () =>
-                              provider.navigatePage(provider.currentIndex + 1)
+                      onTap: provider.currentIndex < provider.portfolio.length - 1
+                          ? () => provider.navigatePage(provider.currentIndex + 1)
                           : null,
                       child: Padding(
                         padding: EdgeInsets.all(8.0),
                         child: Icon(
                           MdiIcons.chevronRight,
-                          color: provider.currentIndex <
-                                  provider.portfolio.length - 1
+                          color: provider.currentIndex < provider.portfolio.length - 1
                               ? Colors.white
                               : Theme.of(context).colorScheme.outline,
                         ),
@@ -181,9 +176,7 @@ class MobileComponent extends StatelessWidget {
                     opacity: provider.isHovering ? 1.0 : 0.0,
                     duration: Duration(milliseconds: 400),
                     child: Container(
-                      color: Theme.of(context)
-                          .scaffoldBackgroundColor
-                          .withOpacity(0.7),
+                      color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.7),
                       child: Padding(
                         padding: const EdgeInsets.all(12.0),
                         child: PortfolioIntroduction(size: size),

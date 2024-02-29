@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 // ThemeData lightTheme = ThemeData(
 //   fontFamily: 'Pretendard',
@@ -95,33 +94,32 @@ ThemeData darkTheme = ThemeData(
   ),
   textTheme: TextTheme(
     headlineLarge: TextStyle(
-      fontFamily: 'BebasNeue',
-      fontWeight: FontWeight.w700,
+      fontFamily: 'Schabo',
       fontSize: 70.0,
     ),
     headlineSmall: TextStyle(
-      fontFamily: 'BebasNeue',
-      fontWeight: FontWeight.w700,
+      fontFamily: 'Schabo',
       fontSize: 60.0,
     ),
     titleLarge: TextStyle(
-      fontFamily: 'BebasNeue',
-      fontWeight: FontWeight.w600,
+      fontFamily: 'Schabo',
       fontSize: 30.0,
     ),
     titleSmall: TextStyle(
-      fontFamily: 'BebasNeue',
-      fontWeight: FontWeight.w600,
+      fontFamily: 'Schabo',
       fontSize: 24.0,
     ),
     displayLarge: TextStyle(
+      fontFamily: 'Pretendard',
       fontWeight: FontWeight.w500,
       fontSize: 16.0,
     ),
     bodyLarge: TextStyle(
+      fontFamily: 'Pretendard',
       fontSize: 16.0,
     ),
     bodySmall: TextStyle(
+      fontFamily: 'Pretendard',
       fontWeight: FontWeight.w400,
       fontSize: 14.0,
       color: Colors.grey[400],

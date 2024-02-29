@@ -32,14 +32,13 @@ class PortfolioController extends ChangeNotifier {
       'color': Color(0xFFE5E7E8),
       'link': [
         {
-          'asset': 'assets/icons/app_store.svg',
+          'asset': 'assets/icons/appstore.svg',
           'link':
               'https://apps.apple.com/us/app/%EB%82%98%EB%88%84%EB%AF%B8-nanumi/id1672197639',
         },
         {
-          'asset': 'assets/icons/google_play.svg',
-          'link':
-              'https://play.google.com/store/apps/details?id=com.parrottkim.nanumi',
+          'asset': 'assets/icons/googleplay.svg',
+          'link': 'https://play.google.com/store/apps/details?id=com.parrottkim.nanumi',
         },
         {
           'asset': 'assets/icons/github.svg',
@@ -50,19 +49,18 @@ class PortfolioController extends ChangeNotifier {
     {
       'title': 'portfolio7'.tr(),
       'explanation': 'portfolio8'.tr(),
-      'stack': ['Flutter', 'Rivderpod', 'Firestore', 'REST API'],
+      'stack': ['Flutter', 'Riverpod', 'Firestore', 'REST API'],
       'date': 'portfolio9'.tr(),
       'image': 'assets/images/portfolio3.png',
       'color': Color(0xFF9050F5),
       'link': [
         {
-          'asset': 'assets/icons/app_store.svg',
+          'asset': 'assets/icons/appstore.svg',
           'link': 'https://apps.apple.com/kr/app/id1613125434',
         },
         {
-          'asset': 'assets/icons/google_play.svg',
-          'link':
-              'https://play.google.com/store/apps/details?id=com.humilylab.wena2022',
+          'asset': 'assets/icons/googleplay.svg',
+          'link': 'https://play.google.com/store/apps/details?id=com.humilylab.wena2022',
         },
       ]
     },

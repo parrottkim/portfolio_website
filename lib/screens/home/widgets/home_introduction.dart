@@ -33,7 +33,7 @@ class DesktopComponent extends StatelessWidget {
             delay: Duration(milliseconds: 2500),
             offset: Offset(-10.0, 0.0),
             child: Text(
-              'Mobile App Developer',
+              'MOBILE APP DEVELOPER',
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
                     color: Theme.of(context).primaryColor,
                   ),
@@ -43,7 +43,7 @@ class DesktopComponent extends StatelessWidget {
             delay: Duration(milliseconds: 2750),
             offset: Offset(-10.0, 0.0),
             child: Text(
-              'Parrott Kim',
+              'PARROTT KIM',
               style: Theme.of(context).textTheme.headlineLarge,
             ),
           ),
@@ -76,7 +76,7 @@ class TabletComponent extends StatelessWidget {
             delay: Duration(milliseconds: 2500),
             offset: Offset(-10.0, 0.0),
             child: Text(
-              'Mobile App Developer',
+              'MOBILE APP DEVELOPER',
               style: Theme.of(context).textTheme.titleSmall?.copyWith(
                     color: Theme.of(context).primaryColor,
                   ),
@@ -86,7 +86,7 @@ class TabletComponent extends StatelessWidget {
             delay: Duration(milliseconds: 2750),
             offset: Offset(-10.0, 0.0),
             child: Text(
-              'Parrott Kim',
+              'PARROTT KIM',
               style: Theme.of(context).textTheme.headlineSmall,
             ),
           ),
@@ -119,7 +119,7 @@ class MobileComponent extends StatelessWidget {
             delay: Duration(milliseconds: 2500),
             offset: Offset(-10.0, 0.0),
             child: Text(
-              'Mobile App Developer',
+              'MOBILE APP DEVELOPER',
               style: Theme.of(context).textTheme.titleSmall?.copyWith(
                     color: Theme.of(context).primaryColor,
                   ),
@@ -129,7 +129,7 @@ class MobileComponent extends StatelessWidget {
             delay: Duration(milliseconds: 2750),
             offset: Offset(-10.0, 0.0),
             child: Text(
-              'Parrott Kim',
+              'PARROTT KIM',
               style: Theme.of(context).textTheme.headlineSmall,
             ),
           ),
