@@ -113,7 +113,8 @@ class DesktopComponent extends StatelessWidget {
                         ),
                       ],
                     ),
-                    separatorBuilder: (context, index) => SizedBox(height: 30.0),
+                    separatorBuilder: (context, index) =>
+                        SizedBox(height: 30.0),
                   ),
                   SizedBox(height: 60.0),
                   FadeAnimation(
@@ -180,7 +181,8 @@ class DesktopComponent extends StatelessWidget {
                         ),
                       ],
                     ),
-                    separatorBuilder: (context, index) => SizedBox(height: 30.0),
+                    separatorBuilder: (context, index) =>
+                        SizedBox(height: 30.0),
                   ),
                 ],
               ),
@@ -259,8 +261,8 @@ class DesktopComponent extends StatelessWidget {
                         delay: Duration(milliseconds: 1500 + (100 * index)),
                         offset: Offset(0.0, 0.0),
                         child: InkWell(
-                          onTap: () =>
-                              html.window.open(provider.social[index]['link'], '_blank'),
+                          onTap: () => html.window
+                              .open(provider.social[index]['link'], '_blank'),
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
@@ -272,7 +274,7 @@ class DesktopComponent extends StatelessWidget {
                                   fit: BoxFit.cover,
                                   colorFilter: ColorFilter.mode(
                                     Colors.white,
-                                    BlendMode.srcATop,
+                                    BlendMode.srcIn,
                                   ),
                                 ),
                               ),
@@ -313,7 +315,8 @@ class MobileComponent extends StatelessWidget {
 
     return Padding(
       padding: EdgeInsets.symmetric(
-          horizontal: Responsive.isTablet(context) ? 100.0 : 16.0, vertical: 60.0),
+          horizontal: Responsive.isTablet(context) ? 100.0 : 16.0,
+          vertical: 60.0),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -524,7 +527,8 @@ class MobileComponent extends StatelessWidget {
                 delay: Duration(milliseconds: 1500 + (100 * index)),
                 offset: Offset(0.0, 0.0),
                 child: InkWell(
-                  onTap: () => html.window.open(provider.social[index]['link'], '_blank'),
+                  onTap: () => html.window
+                      .open(provider.social[index]['link'], '_blank'),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -536,7 +540,7 @@ class MobileComponent extends StatelessWidget {
                           fit: BoxFit.cover,
                           colorFilter: ColorFilter.mode(
                             Colors.white,
-                            BlendMode.srcATop,
+                            BlendMode.srcIn,
                           ),
                         ),
                       ),

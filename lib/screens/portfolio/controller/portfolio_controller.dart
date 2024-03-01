@@ -26,7 +26,7 @@ class PortfolioController extends ChangeNotifier {
     {
       'title': 'portfolio4'.tr(),
       'explanation': 'portfolio5'.tr(),
-      'stack': ['Flutter', 'Riverpod', 'Firestore'],
+      'stack': ['Flutter', 'Riverpod', 'Firebase'],
       'date': 'portfolio6'.tr(),
       'image': 'assets/images/portfolio2.png',
       'color': Color(0xFFE5E7E8),
@@ -38,7 +38,8 @@ class PortfolioController extends ChangeNotifier {
         },
         {
           'asset': 'assets/icons/googleplay.svg',
-          'link': 'https://play.google.com/store/apps/details?id=com.parrottkim.nanumi',
+          'link':
+              'https://play.google.com/store/apps/details?id=com.parrottkim.nanumi',
         },
         {
           'asset': 'assets/icons/github.svg',
@@ -49,7 +50,7 @@ class PortfolioController extends ChangeNotifier {
     {
       'title': 'portfolio7'.tr(),
       'explanation': 'portfolio8'.tr(),
-      'stack': ['Flutter', 'Riverpod', 'Firestore', 'REST API'],
+      'stack': ['Flutter', 'Riverpod', 'Firebase', 'REST API'],
       'date': 'portfolio9'.tr(),
       'image': 'assets/images/portfolio3.png',
       'color': Color(0xFF9050F5),
@@ -60,9 +61,29 @@ class PortfolioController extends ChangeNotifier {
         },
         {
           'asset': 'assets/icons/googleplay.svg',
-          'link': 'https://play.google.com/store/apps/details?id=com.humilylab.wena2022',
+          'link':
+              'https://play.google.com/store/apps/details?id=com.humilylab.wena2022',
         },
-      ]
+      ],
+    },
+    {
+      'title': 'portfolio10'.tr(),
+      'explanation': 'portfolio11'.tr(),
+      'stack': ['Flutter', 'Bloc', 'Firebase', 'REST API'],
+      'date': 'portfolio12'.tr(),
+      'image': 'assets/images/portfolio4.png',
+      'color': Color(0xFF0098E5),
+      'link': [
+        {
+          'asset': 'assets/icons/appstore.svg',
+          'link': 'https://apps.apple.com/kr/app/id6443597104',
+        },
+        {
+          'asset': 'assets/icons/googleplay.svg',
+          'link':
+              'https://play.google.com/store/apps/details?id=kr.findb.findb2&pli=1',
+        },
+      ],
     },
   ];
   List<Map> get portfolio => _portfolio;

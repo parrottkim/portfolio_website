@@ -13,6 +13,11 @@ class AboutController extends ChangeNotifier {
 
   final List<Map> _career = [
     {
+      'date': 'about16'.tr(),
+      'role': 'about17'.tr(),
+      'name': 'about18'.tr(),
+    },
+    {
       'date': 'about5'.tr(),
       'role': 'about6'.tr(),
       'name': 'about7'.tr(),
@@ -21,7 +26,7 @@ class AboutController extends ChangeNotifier {
       'date': 'about8'.tr(),
       'role': 'about9'.tr(),
       'name': 'about10'.tr(),
-    }
+    },
   ];
   List<Map> get career => _career;
 

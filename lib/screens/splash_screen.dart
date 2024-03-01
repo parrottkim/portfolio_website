@@ -69,7 +69,8 @@ class _SplashScreenState extends State<SplashScreen> {
       PageRouteBuilder(
         pageBuilder: (_, __, ___) => MainScreen(),
         transitionDuration: Duration(milliseconds: 200),
-        transitionsBuilder: (_, a, __, c) => FadeTransition(opacity: a, child: c),
+        transitionsBuilder: (_, a, __, c) =>
+            FadeTransition(opacity: a, child: c),
       ),
     );
   }
@@ -95,7 +96,7 @@ class _SplashScreenState extends State<SplashScreen> {
             'assets/icons/parrot.svg',
             colorFilter: ColorFilter.mode(
               Colors.white,
-              BlendMode.srcATop,
+              BlendMode.srcIn,
             ),
           ),
         ),

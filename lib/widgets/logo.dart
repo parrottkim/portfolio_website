@@ -19,7 +19,7 @@ class Logo extends StatelessWidget {
           width: size,
           colorFilter: ColorFilter.mode(
             color,
-            BlendMode.srcATop,
+            BlendMode.srcIn,
           ),
         ),
         SizedBox(width: size / 3),

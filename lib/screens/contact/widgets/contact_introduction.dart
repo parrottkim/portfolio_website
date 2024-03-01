@@ -78,8 +78,8 @@ class ContactIntroduction extends StatelessWidget {
                   children: List.generate(
                     provider.social.length,
                     (index) => InkWell(
-                      onTap: () =>
-                          html.window.open(provider.social[index]['link'], '_blank'),
+                      onTap: () => html.window
+                          .open(provider.social[index]['link'], '_blank'),
                       child: SizedBox(
                         height: 20.0,
                         width: 20.0,
@@ -88,7 +88,7 @@ class ContactIntroduction extends StatelessWidget {
                           fit: BoxFit.cover,
                           colorFilter: ColorFilter.mode(
                             Theme.of(context).scaffoldBackgroundColor,
-                            BlendMode.srcATop,
+                            BlendMode.srcIn,
                           ),
                         ),
                       ),
@@ -108,8 +108,8 @@ class ContactIntroduction extends StatelessWidget {
                   children: List.generate(
                     provider.social.length,
                     (index) => InkWell(
-                      onTap: () =>
-                          html.window.open(provider.social[index]['link'], '_blank'),
+                      onTap: () => html.window
+                          .open(provider.social[index]['link'], '_blank'),
                       child: SizedBox(
                         height: 20.0,
                         width: 20.0,
@@ -118,7 +118,7 @@ class ContactIntroduction extends StatelessWidget {
                           fit: BoxFit.cover,
                           colorFilter: ColorFilter.mode(
                             Theme.of(context).scaffoldBackgroundColor,
-                            BlendMode.srcATop,
+                            BlendMode.srcIn,
                           ),
                         ),
                       ),

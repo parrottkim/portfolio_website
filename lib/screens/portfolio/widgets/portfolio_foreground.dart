@@ -108,17 +108,19 @@ class DesktopComponent extends StatelessWidget {
                           provider.portfolio[index]['link'].length,
                           (wrapIndex) => InkWell(
                             onTap: () => html.window.open(
-                                provider.portfolio[index]['link'][wrapIndex]['link'],
+                                provider.portfolio[index]['link'][wrapIndex]
+                                    ['link'],
                                 '_blank'),
                             child: SizedBox(
                               height: 20.0,
                               width: 20.0,
                               child: SvgPicture.asset(
-                                provider.portfolio[index]['link'][wrapIndex]['asset'],
+                                provider.portfolio[index]['link'][wrapIndex]
+                                    ['asset'],
                                 fit: BoxFit.cover,
                                 colorFilter: ColorFilter.mode(
                                   Colors.white,
-                                  BlendMode.srcATop,
+                                  BlendMode.srcIn,
                                 ),
                               ),
                             ),
@@ -141,7 +143,9 @@ class DesktopComponent extends StatelessWidget {
                       end: Alignment.centerLeft,
                       colors: [
                         Colors.transparent,
-                        Theme.of(context).scaffoldBackgroundColor.withOpacity(0.3),
+                        Theme.of(context)
+                            .scaffoldBackgroundColor
+                            .withOpacity(0.3),
                         Theme.of(context).scaffoldBackgroundColor,
                       ],
                       stops: [
@@ -165,7 +169,9 @@ class DesktopComponent extends StatelessWidget {
                       end: Alignment.centerRight,
                       colors: [
                         Colors.transparent,
-                        Theme.of(context).scaffoldBackgroundColor.withOpacity(0.3),
+                        Theme.of(context)
+                            .scaffoldBackgroundColor
+                            .withOpacity(0.3),
                         Theme.of(context).scaffoldBackgroundColor,
                       ],
                       stops: [
@@ -222,7 +228,8 @@ class MobileComponent extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20.0),
                       color: Theme.of(context).primaryColor),
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 8.0, vertical: 4.0),
                     child: Text(
                       provider.portfolio[index]['stack'][wrapIndex],
                       style: TextStyle(fontSize: 12.0),
@@ -253,7 +260,8 @@ class MobileComponent extends StatelessWidget {
                 provider.portfolio[index]['link'].length,
                 (wrapIndex) => InkWell(
                   onTap: () => html.window.open(
-                      provider.portfolio[index]['link'][wrapIndex]['link'], '_blank'),
+                      provider.portfolio[index]['link'][wrapIndex]['link'],
+                      '_blank'),
                   child: SizedBox(
                     height: 20.0,
                     width: 20.0,
@@ -262,7 +270,7 @@ class MobileComponent extends StatelessWidget {
                       fit: BoxFit.cover,
                       colorFilter: ColorFilter.mode(
                         Colors.white,
-                        BlendMode.srcATop,
+                        BlendMode.srcIn,
                       ),
                     ),
                   ),
