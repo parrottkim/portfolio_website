@@ -81,7 +81,7 @@ class PortfolioController extends ChangeNotifier {
         {
           'asset': 'assets/icons/googleplay.svg',
           'link':
-              'https://play.google.com/store/apps/details?id=kr.findb.findb2&pli=1',
+              'https://play.google.com/store/apps/details?id=kr.findb.findb2',
         },
       ],
     },
